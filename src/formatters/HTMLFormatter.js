@@ -7,8 +7,8 @@ class HTMLFormatter {
      */
     static formatStyle(styleObj) {
         return Object.entries(styleObj)
-            .map(([prop, value]) => `${prop.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()}: ${value}`)
-            .join('; ');
+            .map(([prop, value]) => `${prop.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()}: ${value};`)
+            .join(' ');
     }
 
     /**

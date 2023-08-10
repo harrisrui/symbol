@@ -33,7 +33,12 @@ class HTMLConverter {
         const attributes = [styleAttr, additionalAttr].filter(attr => attr).join(' ');
 
         let html = [];
-        html.push(`<${tag} ${attributes}>\n`);
+        
+        if (!tag) {
+            return '';
+        }
+
+        html.push(attributes.length ? `<${tag} ${attributes}>\n` : `<${tag}>\n`);
 
         if (text) {
             html.push(text.trim() + '\n');
